@@ -128,6 +128,7 @@ export class FetchApiDataService {
 
   editUserProfile(userData: object): Observable<any> {
     const token = localStorage.getItem('token');
+    const username = localStorage.getItem('user');
     return this.http
       .put(apiUrl + `users/${username}`, userData, {
         headers: new HttpHeaders({
@@ -139,6 +140,7 @@ export class FetchApiDataService {
 
   deleteUserProfile(): Observable<any> {
     const token = localStorage.getItem('token');
+    const username = localStorage.getItem('user');
     return this.http
       .delete(apiUrl + `users/${username}`, {
         headers: new HttpHeaders({
